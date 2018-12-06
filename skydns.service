@@ -1,0 +1,12 @@
+[Unit]
+Description=SkyDNS service
+After=etcd.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/skydns/skydns.conf
+User=skydns
+ExecStart=/usr/bin/skydns
+
+[Install]
+WantedBy=multi-user.target
